@@ -18,6 +18,7 @@ deploy:
   api_key:
     secure: SgLeQhFK8/2/8Eh+S7iSVxLiBudEYB1mDhn1UBfUlaBdmlnnDz/SOq7nv4W2LDtb6qmXZVDPcWikE3djA+/kqt+MnOAGQcec5YnIUn7AcZO8W4IME5yUOjmx61bpXyIJohhPc4SLqfErC1nxk8tgSWlB+LaBsq/kI+hPv6pxWDuMmV1a3FJ4MGG750DYUMhGJKVLZ7+V+GbkeI8GK9VNnywNKmrXwJnEhmA/ImYW0nK7uioUsNvGwJ29Ae2ewLBhb/b26ZOxkSaj06c92D7OO1e36qKE0qgv0KnfWa3e+wNaPAyN6xT4dU5t4JhjQuxhqisTdbdXj+xZUhTx9ZRg7spupcPMIarh+WeWfcTWH4FfWexLbZRk9hTtzyoy7W7ZqobFJVHZ568lv9FMnjNrT0qKPOxZXDtbjx3tdEpFRTXgUAgi/vFXtaOSLpUBVC2XLsmqnXOA4tj1nNUkBNNKMcwiEYZ12WBYwvk2dArDSrv0Ma7C/aKftX66YXLa1CSean+hPcpczSUpcaFnU8qqskVJEeWQyzNh0pPI/MurO3q/dD/tuf8xKOZi0u3XQB8XSnrReOPEYtkFH4ROq1sP1qZNQGoZQ/kABzT+GxqnCooWLYklZWrBvO9ITNV36myk+ry48D5I/NeFp/ijjCduJVH5pFWzdNptAY9+yvau6pM=
   file: 'build/libs/AnsiCastle.jar'
+  skip_cleanup: true
   on:
     repo: RanolP/AnsiCastle
     tags: true
