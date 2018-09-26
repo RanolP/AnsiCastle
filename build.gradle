@@ -1,7 +1,10 @@
 plugins {
     id 'java'
     id 'maven'
+    id 'maven-publish'
 }
+
+apply from: rootProject.file('pom.gradle')
 
 wrapper {
     gradleVersion = '4.8.1'
@@ -10,6 +13,8 @@ wrapper {
 
 group 'io.github.ranolp'
 version '0.1.0-SNAPSHOT'
+
+description 'Ansi utility which is alternative of fusesource/jansi'
 
 sourceCompatibility = 1.8
 targetCompatibility = '1.8'
@@ -26,9 +31,62 @@ dependencies {
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
 }
 
-test {
-    useJUnitPlatform()
-    testLogging {
-        showStandardStreams = true
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    group = JavaBasePlugin.DOCUMENTATION_GROUP
+    description = 'Assembles sources JAR'
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+sourceSets {
+    build {
+        java.srcDir file('src/main/java')
     }
+}
+
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+}
+
+artifacts {
+    archives jar
+    archives sourcesJar
+    archives javadocJar
+}
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+
+            groupId project.group
+            artifactId project.name
+            version project.version
+
+            artifact sourcesJar
+            artifact javadocJar
+
+            withPom(pom)
+        }
+    }
+}
+
+model {
+    tasks.generatePomFileForMyPublicationPublication {
+        destination = file("${buildDir}/libs/${project.name}-${project.version}.pom")
+    }
+}
+
+task prepareUpload(type: Copy, dependsOn: ['build', 'generatePomFileForMyPublicationPublication']) {
+    from 'build/libs'
+    into "build/upload/io/github/ranolp/${project.name}/${project.version}"
+    include "mfsjea.jvm-${project.version}.jar"
+    include "mfsjea.jvm-${project.version}-sources.jar"
+    include "mfsjea.jvm-${project.version}-javadoc.jar"
+    include "mfsjea.jvm-${project.version}.pom"
 }
