@@ -14,7 +14,7 @@ public enum Attribute {
     }
 
     public String render() {
-        return AnsiCastle.PREFIX + id + AnsiCastle.SUFFIX;
+        return EscapeSequence.MODIFY_RENDER.render(id);
     }
 
     @Override
