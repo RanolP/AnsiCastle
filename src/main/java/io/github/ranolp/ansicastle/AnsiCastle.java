@@ -2,179 +2,495 @@ package io.github.ranolp.ansicastle;
 
 import java.util.Arrays;
 
+/**
+ * Utility class which is easy to use ansi escape characters
+ */
 public class AnsiCastle {
+    /**
+     * Internal value to make ansi escape codes
+     */
     static final String PREFIX = "\u001b[";
-    static final String SUFFIX = "m";
 
+    /**
+     * Return styled text that applied bright foreground color
+     *
+     * @param color
+     *         color to apply foreground (bright)
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBright(Color color, Object... texts) {
         return new StyledText.Foreground(Arrays.asList(texts), color, true);
     }
 
+    /**
+     * Return styled text that applied bright background color
+     *
+     * @param color
+     *         color to apply background (bright)
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBright(Color color, Object... texts) {
         return new StyledText.Background(Arrays.asList(texts), color, true);
     }
 
+    /**
+     * Return styled text that applied foreground color
+     *
+     * @param color
+     *         color to apply foreground
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fg(Color color, Object... texts) {
         return new StyledText.Foreground(Arrays.asList(texts), color, false);
     }
 
+    /**
+     * Return styled text that applied background color
+     *
+     * @param color
+     *         color to apply background
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bg(Color color, Object... texts) {
         return new StyledText.Background(Arrays.asList(texts), color, false);
     }
 
+
+    /**
+     * Return styled text that applied black foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBlack(Object... texts) {
         return fg(Color.BLACK, texts);
     }
 
+    /**
+     * Return styled text that applied red foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgRed(Object... texts) {
         return fg(Color.RED, texts);
     }
 
+    /**
+     * Return styled text that applied green foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgGreen(Object... texts) {
         return fg(Color.GREEN, texts);
     }
 
+    /**
+     * Return styled text that applied yellow foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgYellow(Object... texts) {
         return fg(Color.YELLOW, texts);
     }
 
+    /**
+     * Return styled text that applied blue foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBlue(Object... texts) {
         return fg(Color.BLUE, texts);
     }
 
+    /**
+     * Return styled text that applied magenta foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgMagenta(Object... texts) {
         return fg(Color.MAGENTA, texts);
     }
 
+    /**
+     * Return styled text that applied cyan foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgCyan(Object... texts) {
         return fg(Color.CYAN, texts);
     }
 
+    /**
+     * Return styled text that applied white foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgWhite(Object... texts) {
         return fg(Color.WHITE, texts);
     }
 
+    /**
+     * Return styled text that applied default foreground color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgDefault(Object... texts) {
         return fg(Color.DEFAULT, texts);
     }
 
-    public static StyledText fgBrightRed(Object... texts) {
-        return fgBright(Color.RED, texts);
-    }
-
-    public static StyledText fgBrightGreen(Object... texts) {
-        return fgBright(Color.GREEN, texts);
-    }
-
-    public static StyledText fgBrightYellow(Object... texts) {
-        return fgBright(Color.YELLOW, texts);
-    }
-
+    /**
+     * Return styled text that applied black foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBrightBlack(Object... texts) {
         return fgBright(Color.BLACK, texts);
     }
 
+    /**
+     * Return styled text that applied red foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
+    public static StyledText fgBrightRed(Object... texts) {
+        return fgBright(Color.RED, texts);
+    }
+
+    /**
+     * Return styled text that applied green foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
+    public static StyledText fgBrightGreen(Object... texts) {
+        return fgBright(Color.GREEN, texts);
+    }
+
+    /**
+     * Return styled text that applied yellow foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
+    public static StyledText fgBrightYellow(Object... texts) {
+        return fgBright(Color.YELLOW, texts);
+    }
+
+    /**
+     * Return styled text that applied blue foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBrightBlue(Object... texts) {
         return fgBright(Color.BLUE, texts);
     }
 
+    /**
+     * Return styled text that applied magenta foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBrightMagenta(Object... texts) {
         return fgBright(Color.MAGENTA, texts);
     }
 
+    /**
+     * Return styled text that applied cyan foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBrightCyan(Object... texts) {
         return fgBright(Color.CYAN, texts);
     }
 
+    /**
+     * Return styled text that applied white foreground color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText fgBrightWhite(Object... texts) {
         return fgBright(Color.WHITE, texts);
     }
 
-
+    /**
+     * Return styled text that applied black background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBlack(Object... texts) {
         return bg(Color.BLACK, texts);
     }
 
+    /**
+     * Return styled text that applied red background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgRed(Object... texts) {
         return bg(Color.RED, texts);
     }
 
+    /**
+     * Return styled text that applied green background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgGreen(Object... texts) {
         return bg(Color.GREEN, texts);
     }
 
+    /**
+     * Return styled text that applied yellow background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgYellow(Object... texts) {
         return bg(Color.YELLOW, texts);
     }
 
+    /**
+     * Return styled text that applied blue background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBlue(Object... texts) {
         return bg(Color.BLUE, texts);
     }
 
+    /**
+     * Return styled text that applied magenta background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgMagenta(Object... texts) {
         return bg(Color.MAGENTA, texts);
     }
 
+    /**
+     * Return styled text that applied cyan background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgCyan(Object... texts) {
         return bg(Color.CYAN, texts);
     }
 
+    /**
+     * Return styled text that applied white background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgWhite(Object... texts) {
         return bg(Color.WHITE, texts);
     }
 
+    /**
+     * Return styled text that applied default background color
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgDefault(Object... texts) {
         return bg(Color.DEFAULT, texts);
     }
 
+    /**
+     * Return styled text that applied black background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightBlack(Object... texts) {
         return bgBright(Color.BLACK, texts);
     }
 
+    /**
+     * Return styled text that applied red background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightRed(Object... texts) {
         return bgBright(Color.RED, texts);
     }
 
+    /**
+     * Return styled text that applied green background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightGreen(Object... texts) {
         return bgBright(Color.GREEN, texts);
     }
 
+    /**
+     * Return styled text that applied yellow background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightYellow(Object... texts) {
         return bgBright(Color.YELLOW, texts);
     }
 
+    /**
+     * Return styled text that applied blue background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightBlue(Object... texts) {
         return bgBright(Color.BLUE, texts);
     }
 
+    /**
+     * Return styled text that applied magenta background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightMagenta(Object... texts) {
         return bgBright(Color.MAGENTA, texts);
     }
 
+    /**
+     * Return styled text that applied cyan background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightCyan(Object... texts) {
         return bgBright(Color.CYAN, texts);
     }
 
+    /**
+     * Return styled text that applied white background color (bright)
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bgBrightWhite(Object... texts) {
         return bgBright(Color.WHITE, texts);
     }
 
+    /**
+     * Return styled text that applied some attribute
+     *
+     * @param attribute
+     *         attribute to apply
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText attribute(Attribute attribute, Object... texts) {
         return new StyledText.Attributed(attribute, Arrays.asList(texts));
     }
 
+    /**
+     * Return styled text that applied attribute bold
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText bold(Object... texts) {
         return attribute(Attribute.BOLD, texts);
     }
 
+    /**
+     * Return styled text that applied attribute italic
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText italic(Object... texts) {
         return attribute(Attribute.ITALIC, texts);
     }
 
+    /**
+     * Return styled text that applied attribute underline
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText underline(Object... texts) {
         return attribute(Attribute.UNDERLINE, texts);
     }
 
+    /**
+     * Return styled text that applied attribute reversed
+     *
+     * @param texts
+     *         text to apply style
+     * @return styled text
+     */
     public static StyledText reversed(Object... texts) {
         return attribute(Attribute.REVERSED, texts);
     }
