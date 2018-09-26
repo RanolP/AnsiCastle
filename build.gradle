@@ -31,6 +31,10 @@ dependencies {
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
 }
 
+jar {
+    version = ''
+}
+
 task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
     group = JavaBasePlugin.DOCUMENTATION_GROUP
@@ -85,8 +89,9 @@ model {
 task prepareUpload(type: Copy, dependsOn: ['build', 'generatePomFileForMyPublicationPublication']) {
     from 'build/libs'
     into "build/upload/io/github/ranolp/${project.name}/${project.version}"
-    include "mfsjea.jvm-${project.version}.jar"
-    include "mfsjea.jvm-${project.version}-sources.jar"
-    include "mfsjea.jvm-${project.version}-javadoc.jar"
-    include "mfsjea.jvm-${project.version}.pom"
+    include "AnsiCastle.jar"
+    rename "AnsiCastle.jar", "AnsiCastle-${project.version}.jar"
+    include "AnsiCastle-${project.version}-sources.jar"
+    include "AnsiCastle-${project.version}-javadoc.jar"
+    include "AnsiCastle-${project.version}.pom"
 }
