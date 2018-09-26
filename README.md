@@ -8,7 +8,7 @@
 
 [RanolP]: https://github.com/RanolP
 
-[contributors]: https://github.com/RanolP/AnsiCastle/contributor
+[contributors]: https://github.com/RanolP/AnsiCastle/contributors
 [CONTRIBUTING.md]: https://github.com/RanolP/AnsiCastle/blob/master/CONTRIBUTING.md
 [LICENSE]: https://github.com/RanolP/AnsiCastle/blob/master/LICENSE
 [SemVer]: https://semver.org/
@@ -60,4 +60,4 @@ For the reasons, I made this project.
 ## Acknowledgments
 
 - Api style inspired by [importre/crayon][crayon-repo] and [ajalt/mordant][mordant-repo]
-- Name inspired by Ansi castle/안시성(安市城) where the [Siege of Ansi](siege-of-ansi) occured.
+- Name inspired by Ansi castle/안시성(安市城) where the [Siege of Ansi][siege-of-ansi] occured.
