@@ -10,9 +10,21 @@
 
 [contributors]: https://github.com/RanolP/AnsiCastle/contributors
 [CONTRIBUTING.md]: https://github.com/RanolP/AnsiCastle/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/RanolP/AnsiCastle/blob/master/LICENSE
+[license-page]: https://github.com/RanolP/AnsiCastle/blob/master/LICENSE
 [SemVer]: https://semver.org/
 [tags]: https://github.com/RanolP/AnsiCastle/tags
+
+[jitpack-badge]: https://jitpack.io/v/RanolP/AnsiCastle.svg
+[jitpack-page]: https://jitpack.io/#RanolP/AnsiCastle
+
+[bintray-badge]: https://api.bintray.com/packages/ranol-github/maven/AnsiCastle/images/download.svg
+[bintray-page]: https://bintray.com/ranol-github/maven/AnsiCastle/_latestVersion
+
+[license-badge]: https://img.shields.io/github/license/RanolP/AnsiCastle.svg
+
+[jitpack-javadoc]: https://jitpack.io/com/github/RanolP/AnsiCastle/v0.1.0/javadoc/
+
+[![license][license-badge]][license-page]
 
 # AnsiCastle
 Ansi utility which is alternative of [fusesource/jansi][jansi-repo]
@@ -21,23 +33,90 @@ Ansi utility which is alternative of [fusesource/jansi][jansi-repo]
 
 ### Install
 
-#### via Maven
+#### via Jitpack
 
-```
-TODO
+Latest version [![jitpack version][jitpack-badge]][jitpack-page]
+
+Maven
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.RanolP</groupId>
+        <artifactId>AnsiCastle</artifactId>
+        <version>v0.1.0</version>
+    </dependency>
+</dependencies>
 ```
 
-#### via Gradle
+Gradle
+```gradle
+repositories {
+    ...
+    maven {
+        url = 'https://jitpack.io'
+    }
+}
 
+dependencies {
+    ...
+    implementation group: 'com.github.RanolP', name: 'AnsiCastle', version: 'v0.1.0'
+}
 ```
-TODO
+
+#### via Bintray
+
+Latest version [![bintray version][bintray-badge]][bintray-page]
+
+Maven
+```xml
+<repositories>
+    <repository>
+        <id>jcenter</id>
+        <name>jcenter-bintray</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>io.github.ranolp</groupId>
+        <artifactId>AnsiCastle</artifactId>
+        <version>0.1.0</version>
+        <type>pom</type>
+    </dependency>
+</dependencies>
 ```
+
+Gradle
+```gradle
+repositories {
+    ...
+    jcenter()
+}
+
+dependencies {
+    ...
+    implementation group: 'io.github.ranolp', name: 'AnsiCastle', version: '0.1.0'
+}
+```
+
+## Documentation
+
+Api Documentations are hosted on [jitpack (v0.1.0)][jitpack-javadoc]
 
 ## Contributing
-Please read [CONTRIBUTING.md] for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md][CONTRIBUTING.md] for details on our code of conduct,
+and the process for submitting pull requests to us.
 
 ## Versioning
-We use [SemVer] for versioning. For the versions available, see the [tags on this repository][tags].
+We use [SemVer][SemVer] for versioning. For the versions available, see the [tags on this repository][tags].
 
 ## Authors
 
@@ -46,7 +125,8 @@ We use [SemVer] for versioning. For the versions available, see the [tags on thi
 See also the list of [contributors] who participated in this project.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE] file for details
+This project is licensed under the MIT License -
+see the [LICENSE][license-page] file for details
 
 ## Why this project exists?
 
